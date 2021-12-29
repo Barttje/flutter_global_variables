@@ -1,3 +1,3 @@
-# Todolist Even Bus Example
+# How to deal with global variables
 
-Todolist with the event bus package, explained in this [blog post](https://bartvwezel.nl/flutter/event-based-flutter-example/)
+Different ways to deal with global variables [blog post](https://bartvwezel.nl/flutter/flutter-how-to-deal-with-global-variables/)

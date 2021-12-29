@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todolist_event_bus/events/todo_list_created_event.dart';
-import 'package:todolist_event_bus/todo_list.dart';
+import 'package:todolist_event_bus/inherited_widget/events/todo_list_checked_event.dart';
+import 'package:todolist_event_bus/inherited_widget/provider/event_bus_provider.dart';
 
 class TotalTodosWidget extends StatefulWidget {
   const TotalTodosWidget({Key? key}) : super(key: key);

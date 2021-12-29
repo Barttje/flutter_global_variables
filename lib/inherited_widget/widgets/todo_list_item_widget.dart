@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todolist_event_bus/domain/todo_list_item.dart';
-import 'package:todolist_event_bus/events/todo_list_checked_event.dart';
-import 'package:todolist_event_bus/todo_list.dart';
+import 'package:todolist_event_bus/inherited_widget/domain/todo_list_item.dart';
+import 'package:todolist_event_bus/inherited_widget/events/todo_list_checked_event.dart';
+import 'package:todolist_event_bus/inherited_widget/provider/event_bus_provider.dart';
 
 class TodoListItemWidget extends StatelessWidget {
   final TodoListItem item;

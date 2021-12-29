@@ -1,22 +1,18 @@
-import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
-import 'package:todolist_event_bus/domain/todo_list_item.dart';
-import 'package:todolist_event_bus/events/todo_list_checked_event.dart';
-import 'package:todolist_event_bus/events/todo_list_created_event.dart';
-import 'package:todolist_event_bus/widgets/new_todo_list_dialog.dart';
-import 'package:todolist_event_bus/widgets/todo_list_item_widget.dart';
-import 'package:todolist_event_bus/widgets/total_todos_widget.dart';
-import 'package:uuid/uuid.dart';
-
-EventBus eventBus = EventBus();
-Uuid uuid = const Uuid();
+import 'package:todolist_event_bus/globals/domain/todo_list_item.dart';
+import 'package:todolist_event_bus/globals/events/todo_list_checked_event.dart';
+import 'package:todolist_event_bus/globals/events/todo_list_created_event.dart';
+import 'package:todolist_event_bus/globals/provider/globals.dart';
+import 'package:todolist_event_bus/globals/widgets/new_todo_list_dialog.dart';
+import 'package:todolist_event_bus/globals/widgets/todo_list_item_widget.dart';
+import 'package:todolist_event_bus/globals/widgets/total_todos_widget.dart';
 
 void main() {
-  runApp(const TodoList());
+  runApp(const App());
 }
 
-class TodoList extends StatelessWidget {
-  const TodoList({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +21,26 @@ class TodoList extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Event Bus TodoList Example"),
-          leading: const TotalTodosWidget(),
-        ),
-        body: const MyTodoList(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => showNewTodoDialog(context),
-          tooltip: 'Create new todo',
-          child: const Icon(Icons.add),
-        ),
+      home: const TodoList(),
+    );
+  }
+}
+
+class TodoList extends StatelessWidget {
+  const TodoList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Event Bus TodoList Provider Example"),
+        leading: const TotalTodosWidget(),
+      ),
+      body: const MyTodoList(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showNewTodoDialog(context),
+        tooltip: 'Create new todo',
+        child: const Icon(Icons.add),
       ),
     );
   }
